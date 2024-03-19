@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction</title>
+</head>
+<body>
+    <h2>Enter the features for prediction</h2>
+    <form action="/predict" method="post">
+        <input type="text" name="Length1" placeholder="Length1" required="required">
+        <input type="text" name="Length2" placeholder="Length2" required="required">
+        <input type="text" name="Length3" placeholder="Length3" required="required">
+        <input type="text" name="Height" placeholder="Height" required="required">
+        <input type="text" name="Width" placeholder="Width" required="required">
+        <input type="text" name="Bream" placeholder="Bream" required="required">
+        <input type="text" name="Parkki" placeholder="Parkki" required="required">
+        <input type="text" name="Perch" placeholder="Perch" required="required">
+        <input type="text" name="Pike" placeholder="Pike" required="required">
+        <input type="text" name="Roach" placeholder="Roach" required="required">
+        <input type="text" name="Smelt" placeholder="Smelt" required="required">
+        <input type="text" name="Whitefish" placeholder="Whitefish" required="required">
+ 
+        <!-- Add more input fields for more features -->
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction_text %}
+    <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>

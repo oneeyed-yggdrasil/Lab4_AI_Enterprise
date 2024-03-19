@@ -5,7 +5,7 @@ from sklearn.metrics import mean_squared_error
 import joblib
 
 # Load the dataset
-data = pd.read_csv("Fish.csv")
+data = pd.read_csv("Fish.csv",delimiter=",")
 
 # Prepare data
 X = data.drop(columns=["Weight"])

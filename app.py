@@ -23,7 +23,7 @@ def predict():
     features = [float(x) for x in request.form.values()]
     final_features = [np.array(features)]
     prediction = model.predict(final_features)
-    return render_template('index.html', prediction_text = 'Predicted Value: {}'.format(round(prediction[0],3)))
+    return render_template('index.html', prediction_text = 'Predicted Value: {}'.format(abs(round(prediction[0],3))))
 
     # length1 = float(request.form['length1'])
     # length2 = float(request.form['length2'])

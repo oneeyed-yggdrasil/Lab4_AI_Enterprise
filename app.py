@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 import joblib
 
 app = Flask(__name__)
-model = joblib.load('models/your_trained_model.pkl')
+model = joblib.load('fish_weight_prediction_model.pkl')
 
 @app.route('/')
 def index():

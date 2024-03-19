@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             jsonObject[key] = value;
         });
 
-        // Send form data to Flask backend
+        // Send form data to Flask backend as JSON
         fetch('/predict', {
             method: 'POST',
             headers: {

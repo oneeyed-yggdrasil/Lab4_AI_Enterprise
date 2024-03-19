@@ -7,6 +7,9 @@ import joblib
 # Load the dataset
 data = pd.read_csv("Fish.csv",delimiter=",")
 
+df = pd.get_dummies(data['Species'],dtype=int)
+data = pd.concat([data.drop(columns=['Species']),df],axis=1)
+
 # Prepare data
 X = data.drop(columns=["Weight"])
 y = data["Weight"]

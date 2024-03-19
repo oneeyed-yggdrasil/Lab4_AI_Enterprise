@@ -1,39 +1,40 @@
-.container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+body {
+    font-family: sans-serif;
 }
 
-h2 {
+h1 {
     text-align: center;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    width: 300px;
 }
 
 label {
     margin-bottom: 5px;
 }
 
-input {
-    padding: 8px;
+input[type="number"], input[type="text"] {
+    padding: 5px;
     margin-bottom: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
 }
 
 button {
-    padding: 10px;
     background-color: #4CAF50;
     color: white;
+    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #45a049;
+#prediction {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
 }

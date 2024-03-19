@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Weight Prediction</title>
+</head>
+<body>
+    <h1>Fish Weight Prediction</h1>
+    <form id="fishForm">
+        <label for="length">Length: </label>
+        <input type="text" id="length" name="length">
+        <br>
+        <label for="width">Width: </label>
+        <input type="text" id="width" name="width">
+        <br>
+        <label for="height">Height: </label>
+        <input type="text" id="height" name="height">
+        <br>
+        <button type="button" onclick="predict()">Predict</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function predict() {
+            var form = document.getElementById("fishForm");
+            var formData = new FormData(form);
+            
+            fetch("/predict", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("result").innerHTML = "Predicted Weight: " + data.prediction.toFixed(2) + " g";
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        }
+    </script>
+</body>
+</html>
